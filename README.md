@@ -1,21 +1,29 @@
 # YouTube Dubbing Studio
 
-Local desktop app for **YouTube video dubbing, AI voice-over, speech-to-text, translation, and final video export**.
+![YouTube Dubbing Studio splash](assets/splash.png)
+
+Local desktop app for YouTube video dubbing, AI voice-over, speech-to-text, translation, and final video export.
+
+[![GitHub stars](https://img.shields.io/github/stars/ViacheslavChernyshov/YouTube-Dubbing-Studio?style=for-the-badge)](https://github.com/ViacheslavChernyshov/YouTube-Dubbing-Studio/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/ViacheslavChernyshov/YouTube-Dubbing-Studio?style=for-the-badge)](https://github.com/ViacheslavChernyshov/YouTube-Dubbing-Studio/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/ViacheslavChernyshov/YouTube-Dubbing-Studio?style=for-the-badge)](https://github.com/ViacheslavChernyshov/YouTube-Dubbing-Studio/issues)
+[![Windows](https://img.shields.io/badge/platform-Windows-0078D6?style=for-the-badge)](https://www.microsoft.com/windows)
+[![Python](https://img.shields.io/badge/python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 
 **YouTube Dubbing Studio** is a Windows-first `PySide6` application that downloads a YouTube video, transcribes speech, translates segments, generates a new voice track with selectable TTS engines, aligns the dub to timing, and renders the final dubbed video back out.
 
-It is built for people who want a **local AI dubbing workflow** with a real GUI instead of a pile of scripts.
+It is built for people who want a local AI dubbing workflow with a real GUI instead of a pile of scripts.
 
-## Why this project exists
+## Why it stands out
 
-Most "YouTube translator" tools only do one piece of the job:
+Most "YouTube translator" tools only solve one fragment of the workflow:
 
 - download the video
 - generate subtitles
 - translate text
 - call one online TTS API
 
-This project is different. It tries to be a full **YouTube dubbing studio**:
+This project is built as a full desktop dubbing pipeline:
 
 - download and prepare source media
 - transcribe speech locally
@@ -27,32 +35,18 @@ This project is different. It tries to be a full **YouTube dubbing studio**:
 
 ## Core Features
 
-- **Desktop GUI** built with `PySide6`
-- **Local speech-to-text** with Whisper / Faster-Whisper
-- **Local translation pipeline** with NLLB
-- **Multiple TTS engines**
-- `Kokoro TTS`
-- `Edge-TTS`
-- `F5-TTS`
-- **Strict model behavior**
-- if a user selects a specific dubbing model, the app should use that model
-- incompatible models are reported explicitly instead of silently switching to another engine
-- **Automatic component bootstrap**
-- portable Python
-- FFmpeg
-- PyTorch
-- required model dependencies
-- **GPU-aware startup**
-- hardware detection
-- CUDA-friendly setup path
-- **Built-in documentation UI**
-- **Logs and pipeline stage visibility**
-- **YouTube Shorts support**
-- **Portable Windows workflow**
+- Desktop GUI built with `PySide6`
+- Local speech-to-text with Whisper / Faster-Whisper
+- Local translation pipeline with NLLB
+- Multiple TTS engines: `Kokoro TTS`, `Edge-TTS`, `F5-TTS`
+- Strict model behavior: the selected dubbing model is used as-is, without silent engine switching
+- Automatic component bootstrap for Python, FFmpeg, PyTorch, and model dependencies
+- GPU-aware startup and CUDA-friendly runtime setup
+- Built-in logs, diagnostics, and pipeline stage visibility
+- YouTube Shorts support
+- Portable Windows workflow
 
-## What the app actually does
-
-End-to-end pipeline:
+## How it works
 
 1. Download the source video from YouTube
 2. Extract and prepare audio
@@ -63,19 +57,13 @@ End-to-end pipeline:
 7. Mix dub with original audio if needed
 8. Export final video
 
-## Supported TTS Engines
+## TTS Engines
 
-### Kokoro TTS
-
-Good local option for fast English dubbing and iteration.
-
-### Edge-TTS
-
-Useful when you want clear cloud voices and broad language coverage.
-
-### F5-TTS
-
-Used for heavier voice-cloning style workflows based on reference audio.
+| Engine | Best for | Notes |
+| --- | --- | --- |
+| `Kokoro TTS` | Fast local English dubbing | Good iteration speed for local workflows |
+| `Edge-TTS` | Broad language coverage | Useful when you need clear voices and multilingual support |
+| `F5-TTS` | Reference-audio-driven dubbing | Better fit for heavier voice-cloning style workflows |
 
 ## Good Fit For
 
@@ -83,17 +71,17 @@ Used for heavier voice-cloning style workflows based on reference audio.
 - developers building a local AI dubbing pipeline
 - researchers experimenting with speech translation and voice generation
 - users who want more control than typical web dubbing tools provide
-- people looking for a **YouTube dubbing app**, **AI dubbing software**, **offline video translation tool**, or **local voice-over generator**
+- people searching for a YouTube dubbing app, AI dubbing software, offline video translation tool, or local voice-over generator
 
-## Screens / Assets
+## Project Preview
 
-Project assets included in the repo:
+Main project art:
 
 - [assets/splash.png](assets/splash.png)
 - [assets/icon.png](assets/icon.png)
 - [assets/icon.ico](assets/icon.ico)
 
-If you want, screenshots of the live UI can be added later in a `docs/` or `assets/screenshots/` folder and linked here.
+This repo is ready for adding live UI screenshots later in `assets/screenshots/` or `docs/`.
 
 ## Project Structure
 
@@ -118,9 +106,9 @@ Important folders inside `app/`:
 
 ## Installation
 
-This project is currently optimized for **Windows**.
+This project is currently optimized for Windows.
 
-### Recommended: first launch installer
+### Recommended
 
 Run:
 
@@ -128,7 +116,7 @@ Run:
 Start.vbs
 ```
 
-On first run it will automatically:
+On first launch it will automatically:
 
 - download portable Python
 - install pip
@@ -137,8 +125,6 @@ On first run it will automatically:
 - prepare FFmpeg and runtime components
 
 ### Manual / advanced path
-
-If you want to run the portable bootstrap manually:
 
 ```powershell
 system\install.cmd
@@ -171,13 +157,11 @@ That is why the repository intentionally excludes:
 - temporary files
 - local config files
 
-## Development Notes
+## Development
 
 ### Tests
 
-Run tests with the project Python environment you use for development.
-
-Example:
+Run tests with the Python environment you use for development:
 
 ```powershell
 python -m unittest discover tests
@@ -211,7 +195,7 @@ The project already contains:
 
 This is an actively evolving codebase, so some parts are more polished than others, but the foundation is already substantial.
 
-## SEO / Keywords
+## SEO Keywords
 
 Useful search phrases this project is relevant to:
 
@@ -226,7 +210,7 @@ Useful search phrases this project is relevant to:
 - AI voice-over for YouTube videos
 - local speech translation pipeline
 
-## Roadmap Ideas
+## Roadmap
 
 - better GitHub-ready screenshots and demo GIFs
 - packaged releases
