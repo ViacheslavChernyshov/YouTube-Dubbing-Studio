@@ -1,0 +1,16 @@
+{
+  "languages": {
+    "en": {"native": "English", "english": "English"},
+    "zh": {"native": "中文", "english": "Chinese"},
+    "hi": {"native": "हिन्दी", "english": "Hindi"},
+    "es": {"native": "Español", "english": "Spanish"},
+    "ar": {"native": "العربية", "english": "Arabic"},
+    "fr": {"native": "Français", "english": "French"},
+    "bn": {"native": "বাংলা", "english": "Bengali"},
+    "pt": {"native": "Português", "english": "Portuguese"},
+    "ru": {"native": "Русский", "english": "Russian"},
+    "uk": {"native": "Українська", "english": "Ukrainian"}
+  },
+  "rtl": ["ar"],
+  "default": "en"
+}
